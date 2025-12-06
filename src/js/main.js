@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Set current year in footer
     const yearSpan = document.getElementById('currentYear');
     if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
+        yearSpan.textContent = '2014';
     }
 
     // Initialize carousel if on home page
