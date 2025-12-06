@@ -158,6 +158,11 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+    /* Add padding between header and first section */
+    .page-header + .container.section {
+        padding-top: var(--spacing-2xl);
+    }
+
     .blog-grid {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
@@ -186,6 +191,11 @@
 
 /* Small Mobile */
 @media (max-width: 480px) {
+    /* Add padding between header and first section */
+    .page-header + .container.section {
+        padding-top: var(--spacing-xl);
+    }
+
     .blog-grid {
         gap: var(--spacing-md);
     }

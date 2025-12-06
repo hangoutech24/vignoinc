@@ -12,6 +12,12 @@
     width: 100%;
 }
 
+/* Ensure proper padding on container for Training page */
+.page-container .container {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+}
+
 .page-title {
     font-size: 2.5rem;
     font-weight: 700;
@@ -362,6 +368,17 @@
 }
 
 @media (max-width: 768px) {
+    /* Add more padding on start and end */
+    .page-container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
+    .page-container .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
     .page-header {
         padding: var(--spacing-2xl) 0;
     }
@@ -446,6 +463,17 @@
 }
 
 @media (max-width: 480px) {
+    /* Add more padding on start and end for small mobile */
+    .page-container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    .page-container .container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
     .page-header {
         padding: var(--spacing-xl) 0;
     }

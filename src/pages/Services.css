@@ -81,6 +81,11 @@
     line-height: 1.6;
 }
 
+/* Add padding to industries section container */
+.bg-light.section {
+    padding: var(--spacing-4xl) 0;
+}
+
 .industries-list li::before {
     content: "✓";
     position: absolute;
@@ -117,10 +122,22 @@
     .industries-list {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
+        padding: var(--spacing-md) 0;
     }
 
     .industries-list li {
         font-size: 0.9375rem;
+        padding: var(--spacing-md) 0;
+        padding-left: var(--spacing-lg);
+    }
+
+    /* Add padding between header and first section */
+    .page-header + .container.section {
+        padding-top: var(--spacing-2xl);
+    }
+
+    .bg-light.section {
+        padding: var(--spacing-2xl) 0;
     }
 }
 
@@ -150,10 +167,21 @@
 
     .industries-list {
         gap: var(--spacing-sm);
+        padding: var(--spacing-sm) 0;
     }
 
     .industries-list li {
         font-size: 0.875rem;
-        padding-left: var(--spacing-sm);
+        padding: var(--spacing-sm) 0;
+        padding-left: var(--spacing-lg);
+    }
+
+    /* Add padding between header and first section */
+    .page-header + .container.section {
+        padding-top: var(--spacing-xl);
+    }
+
+    .bg-light.section {
+        padding: var(--spacing-xl) 0;
     }
 }
