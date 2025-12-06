@@ -117,34 +117,81 @@
     object-fit: contain;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+    .who-we-are-content {
+        gap: var(--spacing-lg);
+    }
+}
+
+/* Mobile */
 @media (max-width: 768px) {
     .who-we-are-content {
         grid-template-columns: 1fr;
         gap: var(--spacing-lg);
     }
 
+    .who-we-are-card {
+        padding: var(--spacing-lg);
+    }
+
+    .mission-text {
+        font-size: 1.25rem;
+    }
+
     .clients-grid {
         gap: var(--spacing-md);
+        flex-direction: column;
     }
 
     .client-logo {
         flex: 0 1 calc(50% - var(--spacing-md));
         min-width: 140px;
         height: 120px;
+        max-width: 100%;
+    }
+
+    .about-card {
+        padding: var(--spacing-lg);
     }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
     .who-we-are-card {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
+    }
+
+    .who-we-are-icon {
+        width: 40px;
+        height: 40px;
     }
 
     .who-we-are-text {
-        font-size: 0.95rem;
+        font-size: 0.9375rem;
+        line-height: 1.6;
+    }
+
+    .mission-text {
+        font-size: 1.125rem;
+    }
+
+    .about-img-placeholder {
+        height: 200px;
     }
 
     .client-logo {
         flex: 0 1 100%;
         max-width: 280px;
+        height: 110px;
+    }
+
+    .about-card {
+        padding: var(--spacing-md);
+    }
+
+    .about-icon {
+        width: 40px;
+        height: 40px;
     }
 }

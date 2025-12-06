@@ -7,15 +7,50 @@ document.addEventListener('DOMContentLoaded', function() {
     const mainNav = document.getElementById('mainNav');
 
     if (mobileMenuBtn && mainNav) {
-        mobileMenuBtn.addEventListener('click', function() {
-            mainNav.classList.toggle('nav-open');
+        // Function to close menu
+        function closeMenu() {
+            mainNav.classList.remove('nav-open');
+            mobileMenuBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+        }
 
-            // Toggle icon between menu and X
+        // Function to open menu
+        function openMenu() {
+            mainNav.classList.add('nav-open');
+            mobileMenuBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+        }
+
+        // Toggle menu on button click
+        mobileMenuBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
             const isOpen = mainNav.classList.contains('nav-open');
             if (isOpen) {
-                mobileMenuBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                closeMenu();
             } else {
-                mobileMenuBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>';
+                openMenu();
+            }
+        });
+
+        // Close menu when clicking on nav links
+        const navLinks = mainNav.querySelectorAll('.nav-link, .nav-cta');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                closeMenu();
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (mainNav.classList.contains('nav-open') && 
+                !mainNav.contains(e.target) && 
+                !mobileMenuBtn.contains(e.target)) {
+                closeMenu();
+            }
+        });
+
+        // Close menu on window resize if screen becomes large
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768 && mainNav.classList.contains('nav-open')) {
+                closeMenu();
             }
         });
     }

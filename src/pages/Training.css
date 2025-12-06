@@ -344,16 +344,36 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) {
-    .philosophy-img {
-        height: 300px;
+    .philosophy-visual {
+        height: 350px;
     }
 
     .courses-grid {
         grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     }
+
+    .page-title {
+        font-size: 2.25rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.125rem;
+    }
 }
 
 @media (max-width: 768px) {
+    .page-header {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1rem;
+    }
+
     .grid-2 {
         grid-template-columns: 1fr;
     }
@@ -361,20 +381,34 @@
     .philosophy-visual {
         order: -1;
         margin-bottom: var(--spacing-xl);
+        height: 300px;
+    }
+
+    .philosophy-text {
+        font-size: var(--font-size-sm);
     }
 
     .tabs-header {
-        flex-direction: column;
+        flex-wrap: wrap;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-sm);
     }
 
     .tab-btn {
-        width: 100%;
-        text-align: left;
-        font-size: var(--font-size-base);
+        flex: 1 1 auto;
+        min-width: 120px;
+        text-align: center;
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .tab-content h3 {
+        font-size: var(--font-size-xl);
     }
 
     .courses-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 
     .course-item {
@@ -383,10 +417,23 @@
 
     .software-list {
         grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
     }
 
     .bullet-list {
         grid-template-columns: 1fr;
+    }
+
+    .skill-card {
+        padding: var(--spacing-lg);
+    }
+
+    .skills-list {
+        padding: var(--spacing-lg);
+    }
+
+    .cta-section {
+        padding: var(--spacing-2xl) var(--spacing-md);
     }
 
     .cta-content h2 {
@@ -399,42 +446,123 @@
 }
 
 @media (max-width: 480px) {
+    .page-header {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .page-title {
+        font-size: 1.75rem;
+    }
+
+    .page-subtitle {
+        font-size: 0.9375rem;
+    }
+
+    .philosophy-visual {
+        height: 250px;
+    }
+
+    .philosophy-text {
+        font-size: var(--font-size-xs);
+        line-height: 1.6;
+    }
+
     .tabs-header {
         gap: var(--spacing-xs);
-        padding: var(--spacing-sm);
+        padding: var(--spacing-xs);
     }
 
     .tab-btn {
-        padding: var(--spacing-sm) var(--spacing-md);
+        padding: var(--spacing-xs) var(--spacing-sm);
         font-size: var(--font-size-xs);
+        min-width: auto;
+        flex: 1 1 calc(50% - var(--spacing-xs));
     }
 
     .tab-content h3 {
-        font-size: var(--font-size-xl);
+        font-size: var(--font-size-lg);
+        margin-bottom: var(--spacing-md);
     }
 
     .courses-grid {
-        gap: var(--spacing-md);
+        gap: var(--spacing-sm);
     }
 
     .course-item {
         padding: var(--spacing-md);
     }
 
+    .course-item h4 {
+        font-size: var(--font-size-sm);
+    }
+
+    .course-item p {
+        font-size: var(--font-size-xs);
+    }
+
     .skill-card {
-        padding: var(--spacing-lg);
+        padding: var(--spacing-md);
+    }
+
+    .skill-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .skill-card h4 {
+        font-size: var(--font-size-base);
+    }
+
+    .skill-card p {
+        font-size: var(--font-size-xs);
+    }
+
+    .skills-list {
+        padding: var(--spacing-md);
+    }
+
+    .skills-list h4 {
+        font-size: var(--font-size-base);
+    }
+
+    .bullet-list li {
+        font-size: var(--font-size-xs);
+        padding-left: var(--spacing-md);
+    }
+
+    .software-category {
+        padding: var(--spacing-md);
+    }
+
+    .software-category h4 {
+        font-size: var(--font-size-base);
+    }
+
+    .software-category li {
+        font-size: var(--font-size-xs);
     }
 
     .section-title {
-        font-size: var(--font-size-2xl);
+        font-size: var(--font-size-xl);
     }
 
     .cta-section {
-        padding: var(--spacing-2xl) 0;
+        padding: var(--spacing-xl) var(--spacing-sm);
     }
 
     .cta-content h2 {
         font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .cta-content p {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .btn-large {
+        padding: 0.875rem 1.5rem;
+        font-size: var(--font-size-sm);
     }
 }
 

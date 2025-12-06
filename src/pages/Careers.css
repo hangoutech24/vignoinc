@@ -155,10 +155,60 @@
     flex-shrink: 0;
 }
 
+/* Tablet */
+@media (max-width: 1024px) {
+    .careers-content {
+        padding: var(--spacing-2xl);
+    }
+
+    .page-title {
+        font-size: 2.25rem;
+    }
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .page-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .careers-content {
+        padding: var(--spacing-xl);
+    }
+
+    .careers-paragraph {
+        font-size: 0.9375rem;
+        text-align: left;
+    }
+
+    .careers-subheading {
+        font-size: var(--font-size-lg);
+        padding-left: var(--spacing-md);
+    }
+
+    .culture-img-placeholder {
+        height: 250px;
+    }
+
+    .benefit-card {
+        padding: var(--spacing-lg);
+    }
+
+    .benefit-icon {
+        width: 40px;
+        height: 40px;
+    }
+
     .cta-section {
         padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .cta-section h2 {
+        font-size: var(--font-size-2xl);
     }
 
     .cta-description {

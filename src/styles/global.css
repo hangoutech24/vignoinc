@@ -30,12 +30,27 @@ button {
     cursor: pointer;
     border: none;
     background: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
     max-width: var(--container-width);
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
 }
 
 .section {
@@ -90,6 +105,8 @@ button {
     transition: all var(--transition-fast);
     cursor: pointer;
     white-space: nowrap;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .btn-primary {
@@ -209,27 +226,201 @@ button {
 }
 
 .grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
 }
 
 .grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
 }
 
 .grid-4 {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
 }
 
+/* Tablet and up */
 @media (min-width: 768px) {
     .grid-2 {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
     }
 
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
+    }
+
+    .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xl);
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
     .grid-3 {
         grid-template-columns: repeat(3, 1fr);
     }
 
     .grid-4 {
         grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .section-title {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .section-subtitle {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-xl);
+    }
+
+    .page-title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .page-subtitle {
+        font-size: var(--font-size-base);
+    }
+
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .btn {
+        padding: 0.625rem 1.25rem;
+        font-size: var(--font-size-sm);
+    }
+
+    .btn-lg {
+        padding: 0.875rem 1.75rem;
+        font-size: var(--font-size-base);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+
+    .section-title {
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .section-subtitle {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .page-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .page-subtitle {
+        font-size: var(--font-size-sm);
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: var(--font-size-xs);
+    }
+
+    .btn-lg {
+        padding: 0.75rem 1.5rem;
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Prevent horizontal overflow */
+* {
+    max-width: 100%;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.app-container {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Responsive utilities */
+.hide-mobile {
+    display: block;
+}
+
+.show-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none;
+    }
+
+    .show-mobile {
+        display: block;
+    }
+}
+
+/* Responsive tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    display: block;
+}
+
+@media (min-width: 768px) {
+    table {
+        display: table;
+    }
+}
+
+/* Responsive iframes and embeds */
+iframe,
+embed,
+object,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Smooth scrolling */
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
     }
 }
