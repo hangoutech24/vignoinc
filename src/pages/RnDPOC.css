@@ -3,13 +3,26 @@
     align-items: center;
     justify-content: center;
     background: var(--color-bg-light);
-    border-radius: 8px;
-    min-height: 300px;
+    border-radius: 16px;
+    min-height: 200px;
+    overflow: hidden;
 }
 
 .rnd-icon {
     color: var(--color-primary);
     opacity: 0.3;
+}
+
+.rnd-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.rnd-img-placeholder:hover .rnd-image {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .rnd-card {
