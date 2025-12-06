@@ -50,6 +50,28 @@ button {
     text-align: center;
 }
 
+.page-header {
+    background: var(--color-secondary);
+    color: white;
+    padding: var(--spacing-4xl) 0;
+    border-bottom: none;
+}
+
+.page-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    color: white;
+    text-align: center;
+}
+
+.page-subtitle {
+    font-size: var(--font-size-lg);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin: 0;
+}
+
 .section-subtitle {
     font-size: var(--font-size-lg);
     color: var(--color-text-light);
