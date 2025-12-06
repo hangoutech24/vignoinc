@@ -63,6 +63,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Training page tab functionality
 function initializeTrainingTabs() {
+    // New tab system - Priority to new tabs
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    if (tabButtons.length > 0 && tabContents.length > 0) {
+        console.log('✓ Tab system initialized - Buttons:', tabButtons.length, 'Contents:', tabContents.length);
+        
+        tabButtons.forEach((button, index) => {
+            console.log(`Button ${index}: ${button.getAttribute('data-tab')}`);
+            
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const tabId = this.getAttribute('data-tab');
+                console.log('━━━ TAB CLICKED:', tabId);
+
+                // Remove active class from all buttons and contents
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    console.log(`  Removed active from: ${content.id}`);
+                });
+
+                // Add active class to clicked button and corresponding content
+                this.classList.add('active');
+                console.log(`  Added active to button: ${tabId}`);
+                
+                const activeContent = document.getElementById(tabId);
+                
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                    console.log(`✓ Activated content: ${tabId}`);
+                } else {
+                    console.error(`✗ ERROR: Element with id "${tabId}" not found!`);
+                    console.log('Available IDs:', Array.from(tabContents).map(c => c.id));
+                }
+            });
+        });
+        return; // Exit if new tab system found
+    }
+
+    // Legacy catalog system (if still used elsewhere)
     const catalogButtons = document.querySelectorAll('.catalog-tab');
     if (catalogButtons.length === 0) return;
 
