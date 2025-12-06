@@ -1,16 +1,84 @@
-# React + Vite
+# Vigno Inc Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A static website for Vigno Inc - Software Corporate Training & Consultancy Services.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This is a pure HTML, CSS, and vanilla JavaScript website. No build process or framework required.
 
-## React Compiler
+## Project Structure
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```
+vigno_website/
+├── index.html              # Home page
+├── about.html             # About Us page
+├── contact.html           # Contact page
+├── solutions.html         # Solutions page
+├── services.html          # Services page
+├── training.html          # Training page
+├── blog.html              # Blog page
+├── careers.html           # Careers page
+├── rnd-poc.html          # R&D and POC page
+├── src/
+│   ├── assets/           # Images and static assets
+│   ├── js/
+│   │   ├── carousel.js   # Image carousel functionality
+│   │   ├── icons.js      # SVG icon library
+│   │   └── main.js       # Main JavaScript (navigation, mobile menu)
+│   ├── styles/
+│   │   ├── variables.css # CSS variables
+│   │   └── global.css    # Global styles
+│   ├── components/       # Component-specific CSS
+│   └── pages/           # Page-specific CSS
+└── README.md
+```
 
-## Expanding the ESLint configuration
+## Running the Website
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Option 1: Python (Recommended)
+```bash
+python3 -m http.server 8000
+```
+
+### Option 2: Node.js
+```bash
+npx http-server -p 8000
+```
+
+### Option 3: Any Static File Server
+Use any static file server of your choice.
+
+Then open your browser to: `http://localhost:8000`
+
+## Features
+
+- ✅ Fully responsive design
+- ✅ Mobile-friendly navigation
+- ✅ Image carousel on home page
+- ✅ Interactive training course catalog
+- ✅ Contact form
+- ✅ No dependencies or build process
+- ✅ Pure HTML/CSS/JavaScript
+
+## Browser Support
+
+Works on all modern browsers:
+- Chrome/Edge (latest)
+- Firefox (latest)
+- Safari (latest)
+- Mobile browsers
+
+## Deployment
+
+Simply upload all files to any static hosting service:
+- Netlify
+- Vercel
+- GitHub Pages
+- AWS S3 + CloudFront
+- Any web server (Apache, Nginx, etc.)
+
+No build step required!
+
+## License
+
+Copyright © Vigno Inc. All rights reserved.
