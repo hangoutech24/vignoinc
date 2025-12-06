@@ -2,6 +2,11 @@
     align-items: start;
 }
 
+/* Add top padding for Get in Touch section */
+.contact-info h2 {
+    padding-top: var(--spacing-2xl);
+}
+
 .info-item {
     display: flex;
     gap: var(--spacing-md);
@@ -100,6 +105,11 @@
         gap: var(--spacing-xl);
     }
 
+    /* Add top padding for Get in Touch */
+    .contact-info h2 {
+        padding-top: var(--spacing-xl);
+    }
+
     .info-item {
         flex-direction: column;
         text-align: center;
@@ -133,6 +143,11 @@
 
 /* Small Mobile */
 @media (max-width: 480px) {
+    /* Add top padding for Get in Touch */
+    .contact-info h2 {
+        padding-top: var(--spacing-lg);
+    }
+
     .info-item {
         margin-bottom: var(--spacing-md);
     }

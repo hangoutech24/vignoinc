@@ -6,6 +6,15 @@
     color: white;
     padding: var(--spacing-4xl) 0;
     text-align: center;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Override container padding for page-header */
+.page-header .container {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
 }
 
 .page-container {
@@ -284,10 +293,20 @@
 /* CTA Section */
 .cta-section {
     background: linear-gradient(135deg, #0f62fe 0%, #0043ce 50%, #00b8ff 100%);
-    padding: var(--spacing-4xl) 0;
+    padding: var(--spacing-4xl) 0 var(--spacing-4xl) 0;
     margin-top: var(--spacing-4xl);
     position: relative;
     overflow: hidden;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* Override container padding for cta-section */
+.cta-section .container {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    padding-bottom: var(--spacing-2xl);
 }
 
 .cta-section::before {
@@ -379,8 +398,31 @@
         padding-right: var(--spacing-md);
     }
 
+    /* Page header full width */
     .page-header {
         padding: var(--spacing-2xl) 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .page-header .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
+    /* CTA section full width with bottom padding */
+    .cta-section {
+        padding: var(--spacing-2xl) 0 var(--spacing-2xl) 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .cta-section .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+        padding-bottom: var(--spacing-xl);
     }
 
     .page-title {
@@ -474,8 +516,31 @@
         padding-right: var(--spacing-sm);
     }
 
+    /* Page header full width */
     .page-header {
         padding: var(--spacing-xl) 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .page-header .container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+
+    /* CTA section full width with bottom padding */
+    .cta-section {
+        padding: var(--spacing-xl) 0 var(--spacing-xl) 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .cta-section .container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+        padding-bottom: var(--spacing-lg);
     }
 
     .page-title {

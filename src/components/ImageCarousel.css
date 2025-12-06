@@ -14,6 +14,9 @@
     position: relative;
     width: 100%;
     height: 500px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y;
 }
 
 .carousel-slides {
@@ -65,37 +68,7 @@
     line-height: 1.6;
 }
 
-.carousel-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.9);
-    border: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 2;
-    transition: all var(--transition-fast);
-    box-shadow: var(--shadow-md);
-}
-
-.carousel-button:hover {
-    background: white;
-    transform: translateY(-50%) scale(1.1);
-    box-shadow: var(--shadow-lg);
-}
-
-.carousel-button-prev {
-    left: var(--spacing-md);
-}
-
-.carousel-button-next {
-    right: var(--spacing-md);
-}
+/* Navigation buttons removed - using swipe gestures instead */
 
 .carousel-indicators {
     position: absolute;
@@ -142,19 +115,6 @@
         height: 350px;
     }
 
-    .carousel-button {
-        width: 40px;
-        height: 40px;
-    }
-
-    .carousel-button-prev {
-        left: var(--spacing-xs);
-    }
-
-    .carousel-button-next {
-        right: var(--spacing-xs);
-    }
-
     .carousel-content {
         padding: var(--spacing-lg);
         max-width: 90%;
@@ -173,16 +133,6 @@
 @media (max-width: 480px) {
     .carousel-wrapper {
         height: 300px;
-    }
-
-    .carousel-button {
-        width: 36px;
-        height: 36px;
-    }
-
-    .carousel-button svg {
-        width: 18px;
-        height: 18px;
     }
 
     .carousel-content {

@@ -48,17 +48,9 @@ class ImageCarousel {
         this.container.innerHTML = `
             <div class="carousel-container">
                 <div class="carousel-wrapper">
-                    <button class="carousel-button carousel-button-prev" aria-label="Previous slide">
-                        ${chevronLeft}
-                    </button>
-
                     <div class="carousel-slides">
                         ${slidesHTML}
                     </div>
-
-                    <button class="carousel-button carousel-button-next" aria-label="Next slide">
-                        ${chevronRight}
-                    </button>
                 </div>
 
                 <div class="carousel-indicators">
@@ -69,12 +61,90 @@ class ImageCarousel {
     }
 
     attachEventListeners() {
-        const prevBtn = this.container.querySelector('.carousel-button-prev');
-        const nextBtn = this.container.querySelector('.carousel-button-next');
         const indicators = this.container.querySelectorAll('.carousel-indicator');
+        const carouselWrapper = this.container.querySelector('.carousel-wrapper');
 
-        if (prevBtn) prevBtn.addEventListener('click', () => this.goToPrevious());
-        if (nextBtn) nextBtn.addEventListener('click', () => this.goToNext());
+        // Swipe gesture support
+        if (carouselWrapper) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            let isDragging = false;
+
+            // Touch events
+            carouselWrapper.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                isDragging = true;
+            }, { passive: true });
+
+            carouselWrapper.addEventListener('touchmove', (e) => {
+                if (isDragging) {
+                    touchEndX = e.touches[0].clientX;
+                }
+            }, { passive: true });
+
+            carouselWrapper.addEventListener('touchend', () => {
+                if (isDragging) {
+                    const swipeThreshold = 50;
+                    const diff = touchStartX - touchEndX;
+
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0) {
+                            // Swipe left - next slide
+                            this.goToNext();
+                        } else {
+                            // Swipe right - previous slide
+                            this.goToPrevious();
+                        }
+                    }
+                    isDragging = false;
+                }
+            });
+
+            // Mouse drag support for desktop
+            let mouseStartX = 0;
+            let mouseEndX = 0;
+            let isMouseDown = false;
+
+            carouselWrapper.addEventListener('mousedown', (e) => {
+                mouseStartX = e.clientX;
+                isMouseDown = true;
+                carouselWrapper.style.cursor = 'grabbing';
+            });
+
+            carouselWrapper.addEventListener('mousemove', (e) => {
+                if (isMouseDown) {
+                    mouseEndX = e.clientX;
+                }
+            });
+
+            carouselWrapper.addEventListener('mouseup', () => {
+                if (isMouseDown) {
+                    const swipeThreshold = 50;
+                    const diff = mouseStartX - mouseEndX;
+
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0) {
+                            // Drag left - next slide
+                            this.goToNext();
+                        } else {
+                            // Drag right - previous slide
+                            this.goToPrevious();
+                        }
+                    }
+                    isMouseDown = false;
+                    carouselWrapper.style.cursor = 'grab';
+                }
+            });
+
+            carouselWrapper.addEventListener('mouseleave', () => {
+                if (isMouseDown) {
+                    isMouseDown = false;
+                    carouselWrapper.style.cursor = 'grab';
+                }
+            });
+
+            carouselWrapper.style.cursor = 'grab';
+        }
 
         indicators.forEach(indicator => {
             indicator.addEventListener('click', (e) => {

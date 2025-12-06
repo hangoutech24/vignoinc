@@ -77,16 +77,22 @@
 
 .cta-section {
     text-align: center;
-    padding: var(--spacing-3xl) var(--spacing-2xl);
+    padding: var(--spacing-3xl) 0 var(--spacing-3xl) 0;
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-    border-radius: 12px;
     color: white;
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.cta-section .container {
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    padding-bottom: var(--spacing-2xl);
 }
 
 .cta-section h2 {
@@ -203,8 +209,18 @@
         height: 40px;
     }
 
+    /* CTA section full width with bottom padding */
     .cta-section {
-        padding: var(--spacing-2xl) var(--spacing-lg);
+        padding: var(--spacing-2xl) 0 var(--spacing-2xl) 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .cta-section .container {
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+        padding-bottom: var(--spacing-xl);
     }
 
     .cta-section h2 {
@@ -251,10 +267,18 @@
         padding: var(--spacing-lg);
     }
 
+    /* CTA section full width with bottom padding */
     .cta-section {
-        padding: var(--spacing-lg);
-        border-radius: 8px;
-        margin: 0 var(--spacing-md);
+        padding: var(--spacing-lg) 0 var(--spacing-lg) 0;
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .cta-section .container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+        padding-bottom: var(--spacing-lg);
     }
 
     .cta-section h2 {
