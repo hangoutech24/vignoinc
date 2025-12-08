@@ -14,12 +14,13 @@
 
 .header-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
     position: relative;
+    gap: var(--spacing-2xl);
 }
 
 .logo {
@@ -48,7 +49,6 @@
     align-items: center;
     gap: var(--spacing-md);
     flex-wrap: nowrap;
-    margin-left: auto;
 }
 
 .nav-link {
@@ -205,7 +205,7 @@
     }
     
     .header-content {
-        justify-content: space-between;
+        justify-content: center;
     }
     
     .nav {
