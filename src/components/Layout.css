@@ -14,12 +14,11 @@
 
 .header-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
-    gap: var(--spacing-2xl);
     position: relative;
 }
 
@@ -49,6 +48,7 @@
     align-items: center;
     gap: var(--spacing-md);
     flex-wrap: nowrap;
+    margin-left: auto;
 }
 
 .nav-link {
@@ -205,11 +205,15 @@
     }
     
     .header-content {
-        justify-content: center;
+        justify-content: space-between;
+    }
+    
+    .nav {
+        margin-left: 0;
     }
     
     .logo {
-        margin: 0 auto;
+        margin: 0;
     }
 
     .logo-icon {

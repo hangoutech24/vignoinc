@@ -423,7 +423,7 @@
         margin-left: calc(-1 * var(--spacing-md));
         margin-right: calc(-1 * var(--spacing-md));
         width: calc(100% + 2 * var(--spacing-md));
-        max-width: 100vw;
+        max-width: 100%;
     }
 
     .cta-section .container {
@@ -550,7 +550,7 @@
         margin-left: calc(-1 * var(--spacing-sm));
         margin-right: calc(-1 * var(--spacing-sm));
         width: calc(100% + 2 * var(--spacing-sm));
-        max-width: 100vw;
+        max-width: 100%;
     }
 
     .cta-section .container {
